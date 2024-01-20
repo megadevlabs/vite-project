@@ -1,9 +1,15 @@
+import ContactForm from './component/ContactForm';
+import Footer from './component/Footer';
+import Header from './component/Header';
+import Hero from './component/Hero';
+
 const App = () => {
   return (
     <div>
-      <h1>React App...</h1>
-      <input placeholder="My Name?" />
-      <button>Submit</button>
+      <Header />
+      <Hero />
+      <ContactForm />
+      <Footer />
     </div>
   );
 };
