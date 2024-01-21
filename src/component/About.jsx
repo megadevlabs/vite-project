@@ -1,5 +1,6 @@
 const About = () => {
   let marks = 60;
+  const city = ['Dhaka', 'London', 'Sweden', 'Berlin'];
   return (
     <div>
       <h1> Hello 1</h1>
@@ -26,6 +27,13 @@ const About = () => {
           return 'F';
         }
       })()}
+
+      <h1>JSX Looping</h1>
+      <ul>
+        {city.map((item, i) => {
+          return <li key={i.toString()}>{item}</li>;
+        })}
+      </ul>
     </div>
   );
 };
