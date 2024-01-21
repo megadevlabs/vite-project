@@ -1,3 +1,4 @@
+import About from './component/About';
 import ContactForm from './component/ContactForm';
 import Footer from './component/Footer';
 import Header from './component/Header';
@@ -8,6 +9,7 @@ const App = () => {
     <div>
       <Header />
       <Hero />
+      <About />
       <ContactForm />
       <Footer />
     </div>
