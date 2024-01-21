@@ -1,6 +1,15 @@
 const About = () => {
   let marks = 60;
   const city = ['Dhaka', 'London', 'Sweden', 'Berlin'];
+  const status = false;
+
+  const LoginStatusBtn = status => {
+    if (status) {
+      return <button>Logout Btn</button>;
+    } else {
+      return <button>Login Btn</button>;
+    }
+  };
   return (
     <div>
       <h1> Hello 1</h1>
@@ -34,6 +43,15 @@ const About = () => {
           return <li key={i.toString()}>{item}</li>;
         })}
       </ul>
+
+      <h1>JSX Conditional Rendring</h1>
+      {/* Method 1 */}
+      <h3>Login Status 1</h3>
+      {status == true ? <button>Logout</button> : <button>Login</button>}
+
+      {/* Method 2 */}
+      <h3>Login Status 2</h3>
+      {LoginStatusBtn(true)}
     </div>
   );
 };
