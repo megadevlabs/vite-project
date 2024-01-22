@@ -63,6 +63,13 @@ const About = props => {
     myHeadlineCss.current.classList.add('text-danger');
   };
 
+  let numV = useRef(0);
+  let changeNumV = useRef();
+  const changeNum = () => {
+    let changeNV = numV.current++;
+    changeNumV.current.innerText = changeNV;
+  };
+
   return (
     <div>
       <h1> Hello 1</h1>
@@ -176,6 +183,10 @@ const About = props => {
         This is my Headline
       </h2>
       <button onClick={changeCssClass}>Click</button>
+
+      <h1>React Hook - useRef Working with Persisted Mutable</h1>
+      <h2 ref={changeNumV}>0</h2>
+      <button onClick={changeNum}>Click</button>
     </div>
   );
 };
