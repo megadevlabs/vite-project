@@ -47,6 +47,16 @@ const About = props => {
     myImg.current.setAttribute('width', '300px');
   };
 
+  let firstName,
+    lastName = useRef();
+  let mobile = useRef();
+  const changeInput = () => {
+    let fName = firstName.value;
+    let lName = lastName.value;
+    let mNum = mobile.current.value;
+    alert(fName + ' ' + lName + ' ' + mNum);
+  };
+
   return (
     <div>
       <h1> Hello 1</h1>
@@ -141,6 +151,19 @@ const About = props => {
       <h1>React Hook - useRef method using Attribute change</h1>
       <img src="https://placehold.co/600x400" ref={myImg} alt="" />
       <button onClick={changeImg}>Click</button>
+
+      <h1>React Hook - useRef Working with Input Element</h1>
+      <input
+        ref={fn => (firstName = fn)}
+        type="text"
+        placeholder="First Name?"
+      />
+      <br />
+      <input ref={ln => (lastName = ln)} type="text" placeholder="Last Name?" />
+      <br />
+      <input ref={mobile} type="text" placeholder="Mobile Number?" />
+      <br />
+      <button onClick={changeInput}>Click</button>
     </div>
   );
 };
