@@ -57,6 +57,12 @@ const About = props => {
     alert(fName + ' ' + lName + ' ' + mNum);
   };
 
+  let myHeadlineCss = useRef();
+  const changeCssClass = () => {
+    myHeadlineCss.current.classList.remove('text-success');
+    myHeadlineCss.current.classList.add('text-danger');
+  };
+
   return (
     <div>
       <h1> Hello 1</h1>
@@ -164,6 +170,12 @@ const About = props => {
       <input ref={mobile} type="text" placeholder="Mobile Number?" />
       <br />
       <button onClick={changeInput}>Click</button>
+
+      <h1>React Hook - useRef Working with CSS Class of Bootstrap</h1>
+      <h2 className="text-success" ref={myHeadlineCss}>
+        This is my Headline
+      </h2>
+      <button onClick={changeCssClass}>Click</button>
     </div>
   );
 };
