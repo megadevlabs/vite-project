@@ -26,6 +26,11 @@ const About = props => {
     alert('Clicked!');
   };
 
+  const FormDataPostSubmit = event => {
+    event.preventDefault();
+    alert('Form Submitted!');
+  };
+
   return (
     <div>
       <h1> Hello 1</h1>
@@ -103,6 +108,12 @@ const About = props => {
       </button>
 
       <button onClick={Demo}>Click Here</button>
+
+      <h1>Managing Form Data Submit</h1>
+      <form action="" onSubmit={FormDataPostSubmit}>
+        <input type="text" placeholder="Name?" />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
