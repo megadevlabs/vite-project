@@ -40,6 +40,13 @@ const About = props => {
     myHeadLineInnerHTML.current.innerHTML = '<i>Hello Inner Html</i>';
   };
 
+  let myImg = useRef();
+  const changeImg = () => {
+    myImg.current.src = 'https://placehold.co/600x400?text=Hello+World';
+    myImg.current.setAttribute('height', '200px');
+    myImg.current.setAttribute('width', '300px');
+  };
+
   return (
     <div>
       <h1> Hello 1</h1>
@@ -130,6 +137,10 @@ const About = props => {
       <h3 ref={myHeadLineInnerText}></h3>
       <h3 ref={myHeadLineInnerHTML}></h3>
       <button onClick={change}>Click</button>
+
+      <h1>React Hook - useRef method using Attribute change</h1>
+      <img src="https://placehold.co/600x400" ref={myImg} alt="" />
+      <button onClick={changeImg}>Click</button>
     </div>
   );
 };
