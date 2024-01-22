@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 const About = props => {
   let marks = 60;
   const city = ['Dhaka', 'London', 'Sweden', 'Berlin'];
@@ -29,6 +31,13 @@ const About = props => {
   const FormDataPostSubmit = event => {
     event.preventDefault();
     alert('Form Submitted!');
+  };
+
+  const myHeadLineInnerText = useRef();
+  const myHeadLineInnerHTML = useRef();
+  const change = () => {
+    myHeadLineInnerText.current.innerText = 'Hello React UseRef() Hook Method';
+    myHeadLineInnerHTML.current.innerHTML = '<i>Hello Inner Html</i>';
   };
 
   return (
@@ -114,6 +123,13 @@ const About = props => {
         <input type="text" placeholder="Name?" />
         <button type="submit">Submit</button>
       </form>
+
+      <h1>
+        React Hook - useRef method using InnerText, InnerHtml elements change
+      </h1>
+      <h3 ref={myHeadLineInnerText}></h3>
+      <h3 ref={myHeadLineInnerHTML}></h3>
+      <button onClick={change}>Click</button>
     </div>
   );
 };
