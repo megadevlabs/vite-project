@@ -22,6 +22,10 @@ const About = props => {
     }
   };
 
+  const Demo = () => {
+    alert('Clicked!');
+  };
+
   return (
     <div>
       <h1> Hello 1</h1>
@@ -88,6 +92,17 @@ const About = props => {
 
       <h1>Passing Any Kinds of Function using Props to a Chaild Component</h1>
       <button onClick={props.ChaildBtnClick}>Click Me</button>
+
+      <h1>RESPONDING TO EVENTS - Managing Click Event</h1>
+      <button
+        onClick={() => {
+          alert('Clicked!');
+        }}
+      >
+        Submit
+      </button>
+
+      <button onClick={Demo}>Click Here</button>
     </div>
   );
 };
