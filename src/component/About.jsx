@@ -10,6 +10,18 @@ const About = () => {
       return <button>Login Btn</button>;
     }
   };
+
+  const renderSwitch = status => {
+    switch (status) {
+      case true:
+        return <button>Logout Btn</button>;
+      case false:
+        return <button>Login Btn</button>;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div>
       <h1> Hello 1</h1>
@@ -44,7 +56,7 @@ const About = () => {
         })}
       </ul>
 
-      <h1>JSX Conditional Rendring</h1>
+      <h1>JSX Conditional Rendring IF ELSE</h1>
       {/* Method 1 */}
       <h3>Login Status 1</h3>
       {status == true ? <button>Logout</button> : <button>Login</button>}
@@ -52,6 +64,9 @@ const About = () => {
       {/* Method 2 */}
       <h3>Login Status 2</h3>
       {LoginStatusBtn(true)}
+
+      <h1>JSX Conditional Rendring SWITCH CASE</h1>
+      {renderSwitch(false)}
     </div>
   );
 };
