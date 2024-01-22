@@ -77,6 +77,14 @@ const About = props => {
       <h1>Passing Simple Data using Props to a Chaild Component</h1>
       <h3>{props.title}</h3>
       <p>{props.desc}</p>
+
+      <h1>Passing Info Data Object using Props to a Chaild Component</h1>
+      <ul>
+        <li>Name: {props.item.name}</li>
+        <li>Age: {props.item.age}</li>
+        <li>City: {props.item.dist}</li>
+        <li>Mobile: {props.item.mobile}</li>
+      </ul>
     </div>
   );
 };
