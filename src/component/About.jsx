@@ -1,7 +1,7 @@
 const About = () => {
   let marks = 60;
   const city = ['Dhaka', 'London', 'Sweden', 'Berlin'];
-  const status = false;
+  const status = true;
 
   const LoginStatusBtn = status => {
     if (status) {
@@ -67,6 +67,12 @@ const About = () => {
 
       <h1>JSX Conditional Rendring SWITCH CASE</h1>
       {renderSwitch(false)}
+
+      <h1>JSX Conditional Rendring Ternary Operator</h1>
+      {status ? <button>Logout</button> : <button>Login</button>}
+
+      <h1>JSX Conditional Rendring Logical AND &&</h1>
+      {status && <button>Logout Button</button>}
     </div>
   );
 };
