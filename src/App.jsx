@@ -11,6 +11,10 @@ const App = () => {
     dist: 'Chandpur',
     mobile: '01707073341',
   };
+
+  const btnClick = () => {
+    alert('Say Hello!');
+  };
   return (
     <div>
       <Header />
@@ -19,6 +23,7 @@ const App = () => {
         title="Learn React with Vite"
         desc="Learn in-details about react props"
         item={objInfo}
+        ChaildBtnClick={btnClick}
       />
       <ContactForm />
       <Footer />

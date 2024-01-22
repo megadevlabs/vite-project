@@ -85,6 +85,9 @@ const About = props => {
         <li>City: {props.item.dist}</li>
         <li>Mobile: {props.item.mobile}</li>
       </ul>
+
+      <h1>Passing Any Kinds of Function using Props to a Chaild Component</h1>
+      <button onClick={props.ChaildBtnClick}>Click Me</button>
     </div>
   );
 };
