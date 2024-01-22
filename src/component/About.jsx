@@ -1,4 +1,4 @@
-const About = () => {
+const About = props => {
   let marks = 60;
   const city = ['Dhaka', 'London', 'Sweden', 'Berlin'];
   const status = true;
@@ -66,13 +66,17 @@ const About = () => {
       {LoginStatusBtn(true)}
 
       <h1>JSX Conditional Rendring SWITCH CASE</h1>
-      {renderSwitch(false)}
+      {renderSwitch(true)}
 
       <h1>JSX Conditional Rendring Ternary Operator</h1>
       {status ? <button>Logout</button> : <button>Login</button>}
 
       <h1>JSX Conditional Rendring Logical AND &&</h1>
       {status && <button>Logout Button</button>}
+
+      <h1>Passing Simple Data using Props to a Chaild Component</h1>
+      <h3>{props.title}</h3>
+      <p>{props.desc}</p>
     </div>
   );
 };

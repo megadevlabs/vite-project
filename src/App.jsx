@@ -9,7 +9,10 @@ const App = () => {
     <div>
       <Header />
       <Hero />
-      <About />
+      <About
+        title="Learn React with Vite"
+        desc="Learn in-details about react props"
+      />
       <ContactForm />
       <Footer />
     </div>
