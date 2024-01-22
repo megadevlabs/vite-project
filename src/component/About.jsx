@@ -70,6 +70,19 @@ const About = props => {
     changeNumV.current.innerText = changeNV;
   };
 
+  let APIData = useRef(null);
+  let showFetchData = useRef();
+  // API Data Caching by Calling
+  const fetchData = async () => {
+    const response = await fetch('https://dummyjson.com/products');
+    APIData.current = await response.json();
+  };
+
+  // Show API Caching Data
+  const showData = () => {
+    showFetchData.current.innerText = JSON.stringify(APIData.current);
+  };
+
   return (
     <div>
       <h1> Hello 1</h1>
@@ -187,6 +200,11 @@ const About = props => {
       <h1>React Hook - useRef Working with Persisted Mutable</h1>
       <h2 ref={changeNumV}>0</h2>
       <button onClick={changeNum}>Click</button>
+
+      <h1>React Hook - useRef Working with Caching Expensive Computation</h1>
+      <p ref={showFetchData}></p>
+      <button onClick={fetchData}>Call API</button>
+      <button onClick={showData}>Show Data</button>
     </div>
   );
 };
