@@ -148,6 +148,17 @@ const About = props => {
       .then(res => res.json())
       .then(json => setData(json));
   }, []);
+
+  // useEffect API Calling with Async Await
+  let [myData, setMyData] = useState();
+  useEffect(() => {
+    (async () => {
+      let response = await fetch('https://dummyjson.com/products/3');
+      let json = await response.json();
+      setMyData(json);
+    })();
+  }, []);
+
   // Rendering Data Views
   return (
     <div className="container-fluid">
@@ -381,6 +392,9 @@ const About = props => {
         React Hook - useEffect Structure and Using API Calling Promises system
       </h1>
       {JSON.stringify(data)}
+
+      <h1>React Hook - useEffect Using API Calling Async Await system</h1>
+      {JSON.stringify(myData)}
     </div>
   );
 };
