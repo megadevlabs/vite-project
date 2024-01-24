@@ -29,7 +29,7 @@ const Menu = () => {
             className={({ isActive }) =>
               isActive ? 'active-item' : 'pending-item'
             }
-            to="/product"
+            to="/product/10/Iphone-16"
           >
             Product
           </NavLink>
@@ -39,7 +39,7 @@ const Menu = () => {
             className={({ isActive }) =>
               isActive ? 'active-item' : 'pending-item'
             }
-            to="/profile"
+            to="/profile/cisrony/TechSkill360"
           >
             Profile
           </NavLink>
