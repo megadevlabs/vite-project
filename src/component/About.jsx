@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const About = props => {
   let marks = 60;
@@ -83,6 +83,10 @@ const About = props => {
     showFetchData.current.innerText = JSON.stringify(APIData.current);
   };
 
+  // UseState
+  let [number, setNumber] = useState(0);
+
+  // Rendering Data Views
   return (
     <div>
       <h1> Hello 1</h1>
@@ -205,6 +209,10 @@ const About = props => {
       <p ref={showFetchData}></p>
       <button onClick={fetchData}>Call API</button>
       <button onClick={showData}>Show Data</button>
+
+      <h1>React Hook - useState Basic Working Details</h1>
+      <h5>Number: {number}</h5>
+      <button onClick={() => setNumber(number + 1)}>Click</button>
     </div>
   );
 };
