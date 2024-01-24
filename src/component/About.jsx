@@ -102,6 +102,20 @@ const About = props => {
     }));
   };
 
+  // useState Array (ToDo Task )
+  const [list, setList] = useState([]);
+  const [item, setItem] = useState('');
+
+  const addToList = () => {
+    list.push(item);
+    setList([...list]);
+  };
+
+  const removeItem = index => {
+    list.splice(index, 1);
+    setList([...list]);
+  };
+
   // Rendering Data Views
   return (
     <div>
@@ -237,6 +251,42 @@ const About = props => {
       <h4>{myObj.key1}</h4>
       <h4>{myObj.key3}</h4>
       <button onClick={myObjChange}>Click</button>
+
+      <h1>
+        React Hook - useState Immutable Array and use Spread Operator also
+        Working
+      </h1>
+      <p>{list.length}</p>
+      <table>
+        <tbody>
+          {list.length !== 0 ? (
+            list.map((element, index) => {
+              return (
+                <tr>
+                  <td>{element}</td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        removeItem(index);
+                      }}
+                    >
+                      Remove
+                    </button>
+                  </td>
+                </tr>
+              );
+            })
+          ) : (
+            <tr>No Data</tr>
+          )}
+        </tbody>
+      </table>
+      <input
+        type="text"
+        placeholder="Item?"
+        onChange={e => setItem(e.target.value)}
+      />
+      <button onClick={addToList}>Add Item</button>
     </div>
   );
 };
