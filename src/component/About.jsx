@@ -86,6 +86,22 @@ const About = props => {
   // UseState
   let [number, setNumber] = useState(0);
 
+  // useState Object
+  const [myObj, setMyObj] = useState({
+    key1: 'Value 1',
+    key2: 'Value 2',
+    key3: 'Value 3',
+    key4: 'Value 4',
+    key5: 'Value 5',
+  });
+  const myObjChange = () => {
+    setMyObj(prevObj => ({
+      ...prevObj, // Spread Operator
+      key1: 'New Changed Value for Key 1',
+      key3: 'New Changed Value for Key 3',
+    }));
+  };
+
   // Rendering Data Views
   return (
     <div>
@@ -213,6 +229,14 @@ const About = props => {
       <h1>React Hook - useState Basic Working Details</h1>
       <h5>Number: {number}</h5>
       <button onClick={() => setNumber(number + 1)}>Click</button>
+
+      <h1>
+        React Hook - useState Immutable Object and use Spread Operator also
+        Working Details
+      </h1>
+      <h4>{myObj.key1}</h4>
+      <h4>{myObj.key3}</h4>
+      <button onClick={myObjChange}>Click</button>
     </div>
   );
 };
