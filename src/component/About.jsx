@@ -136,10 +136,18 @@ const About = props => {
     alert(JSON.stringify(FormObj));
   };
 
-  // useEffect
+  // useEffect Basic Structure
   useEffect(() => {
     console.log('Hello UseEffect');
   }, [0, 1, 2, 3, 4]);
+
+  // useEffect API Calling with Proises
+  let [data, setData] = useState();
+  useEffect(() => {
+    fetch('https://dummyjson.com/products/1')
+      .then(res => res.json())
+      .then(json => setData(json));
+  }, []);
   // Rendering Data Views
   return (
     <div className="container-fluid">
@@ -369,7 +377,10 @@ const About = props => {
         <button type="submit">Submit</button>
       </form>
 
-      <h1>React Hook - useEffect Structure and Using system</h1>
+      <h1>
+        React Hook - useEffect Structure and Using API Calling Promises system
+      </h1>
+      {JSON.stringify(data)}
     </div>
   );
 };
