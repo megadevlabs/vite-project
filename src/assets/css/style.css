@@ -1,0 +1,13 @@
+.active-item {
+  color: green;
+}
+.pending-item {
+  color: red;
+}
+
+ul li {
+  display: inline-flex;
+  margin: 5px;
+  padding: 5px 15px;
+  border: 1px solid;
+}
