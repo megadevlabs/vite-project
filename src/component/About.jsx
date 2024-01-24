@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const About = props => {
   let marks = 60;
@@ -136,6 +136,10 @@ const About = props => {
     alert(JSON.stringify(FormObj));
   };
 
+  // useEffect
+  useEffect(() => {
+    console.log('Hello UseEffect');
+  }, [0, 1, 2, 3, 4]);
   // Rendering Data Views
   return (
     <div className="container-fluid">
@@ -364,6 +368,8 @@ const About = props => {
         <br />
         <button type="submit">Submit</button>
       </form>
+
+      <h1>React Hook - useEffect Structure and Using system</h1>
     </div>
   );
 };
