@@ -116,9 +116,29 @@ const About = props => {
     setList([...list]);
   };
 
+  // Manage Form
+  let [FormObj, setFormObj] = useState({
+    fName: '',
+    lName: '',
+    city: '',
+    gender: '',
+  });
+  const InputOnChange = (property, value) => {
+    setFormObj(prevObj => ({
+      ...prevObj,
+      [property]: value,
+    }));
+  };
+
+  const FormSubmit = e => {
+    e.preventDefault();
+    // console.log(FormObj);
+    alert(JSON.stringify(FormObj));
+  };
+
   // Rendering Data Views
   return (
-    <div>
+    <div className="container-fluid">
       <h1> Hello 1</h1>
       <h4> Hello {5 + 7}</h4>
       <h4> Hello 3</h4>
@@ -287,6 +307,63 @@ const About = props => {
         onChange={e => setItem(e.target.value)}
       />
       <button onClick={addToList}>Add Item</button>
+
+      <h1>React Hook - useState Managing Form Submit with Data Working</h1>
+      <form action="" onSubmit={FormSubmit}>
+        <input
+          onChange={e => {
+            InputOnChange('fName', e.target.value);
+          }}
+          type="text"
+          value={FormObj.fName}
+          placeholder="First Name?"
+        />
+        <br />
+        <input
+          onChange={e => {
+            InputOnChange('lName', e.target.value);
+          }}
+          type="text"
+          value={FormObj.lName}
+          placeholder="Last Name?"
+        />
+        <br />
+        <select
+          onChange={e => {
+            InputOnChange('city', e.target.value);
+          }}
+          name=""
+          value={FormObj.city}
+          id=""
+        >
+          <option value="">Choose City</option>
+          <option value="Dhaka">Dhaka</option>
+          <option value="Rangpur">Rangpur</option>
+        </select>
+        <br />
+        <input
+          onChange={() => {
+            InputOnChange('gender', 'Male');
+          }}
+          type="radio"
+          checked={FormObj.gender === 'Male'}
+          name="gender"
+          id=""
+        />
+        Male
+        <input
+          onChange={() => {
+            InputOnChange('gender', 'Female');
+          }}
+          type="radio"
+          checked={FormObj.gender === 'Female'}
+          name="gender"
+          id=""
+        />
+        Female
+        <br />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
